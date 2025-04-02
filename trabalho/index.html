@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EcoTour Brasil - Pacotes de viagens sustentáveis e personalizados">
+    <title>EcoTour Brasil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- 📌 Cabeçalho com Menu de Navegação -->
+    <header>
+        <h1>EcoTour Brasil</h1>
+        <nav>
+            <ul>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#destinos">Destinos</a></li>
+                <li><a href="#pacotes">Pacotes</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 📌 Seção de Serviços -->
+    <section id="servicos">
+        <h2>Serviços</h2>
+        <p>Oferecemos pacotes turísticos personalizados, focados em experiências sustentáveis e ecológicas pelo Brasil.</p>
+    </section>
+
+    <!-- 📌 Seção de Destinos Populares -->
+    <section id="destinos">
+        <h2>Destinos Populares</h2>
+        <ul>
+            <li>Amazônia</li>
+            <li>Chapada Diamantina</li>
+            <li>Pantanal</li>
+        </ul>
+    </section>
+
+    <!-- 📌 Tabela de Pacotes Turísticos -->
+    <section id="pacotes">
+        <h2>Pacotes Turísticos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Destino</th>
+                    <th>Duração</th>
+                    <th>Preço</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Amazônia</td>
+                    <td>7 dias</td>
+                    <td>R$ 3.500</td>
+                </tr>
+                <tr>
+                    <td>Chapada Diamantina</td>
+                    <td>5 dias</td>
+                    <td>R$ 2.800</td>
+                </tr>
+                <tr>
+                    <td>Pantanal</td>
+                    <td>6 dias</td>
+                    <td>R$ 3.200</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- 📌 Formulário de Contato -->
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- 📌 Formulário de Reserva -->
+    <section id="reserva">
+        <h2>Faça sua Reserva</h2>
+        <form>
+            <label for="nome-reserva">Nome:</label>
+            <input type="text" id="nome-reserva" name="nome" required>
+
+            <label for="email-reserva">E-mail:</label>
+            <input type="email" id="email-reserva" name="email" required>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(99) 99999-9999" required>
+
+            <button type="submit">Reservar</button>
+        </form>
+    </section>
+
+</body>
+</html>

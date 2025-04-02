@@ -1,0 +1,112 @@
+/* Estilos globais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: #008000;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Seções */
+section {
+    padding: 20px;
+}
+
+h2 {
+    color: #008000;
+}
+
+/* Tabela */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #008000;
+    color: white;
+}
+
+/* Formulário */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+}
+
+label, input, textarea {
+    margin-bottom: 10px;
+}
+
+button {
+    background: #008000;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Validação de Formulário */
+input:invalid {
+    border: 2px solid red;
+}
+
+input:focus {
+    border: 2px solid blue;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    form {
+        width: 100%;
+    }
+}
