@@ -3,72 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Perfil</title>
+    <title>Feedback para a página de perfil de felipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .feedback-section {
+            margin-top: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        .media {
+            margin-top: 20px;
+        }
+
+    </style>
 </head>
 <body>
-    <!-- Cabeçalho -->
-    <header>
-        <h1>felipe</h1>
-        <h2>Sou estudante e apaixonado por tecnologia e design.</h2>
-    </header>
+    <div class="container">
+        <h1>Feedback para a página de perfil de felipe</h1>
 
-    <!-- Foto de Perfil -->
-    <section>
-        <h3>Minha Foto de Perfil</h3>
-        <img src="https://media.sproutsocial.com/uploads/2022/06/profile-picture.jpeg" alt="Foto de Perfil" />
-    </section>
+        <!-- Formulário -->
+        <form action="#">
+            <!-- Dados pessoais -->
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
 
-    <!-- Apresentação -->
-    <section>
-        <p>Olá! Meu nome é felipe. Sou estudante de engenharia de computação e tenho grande interesse em tecnologia. Gosto de aprender sobre novas tecnologias e estou sempre em busca de novos desafios!</p>
-    </section>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
 
-    <!-- Lista Ordenada (Favoritos) -->
-    <section>
-        <h3>Meus 3 Favoritos</h3>
-        <ol>
-            <li>Livro - O Pequeno Príncipe</li>
-            <li>Filme - homen aranha</li>
-            <li>Música - gorillaz</li>
-        </ol>
-    </section>
+            <label for="source">Como encontrou meu perfil?</label>
+            <select id="source" name="source">
+                <option value="google">Google</option>
+                <option value="social_media">Mídia social</option>
+                <option value="friend">Amigo</option>
+            </select>
 
-    <!-- Lista Não Ordenada (Hobbies) -->
-    <section>
-        <h3>Meus Hobbies</h3>
-        <ul>
-            <li>Jogos de tabuleiro</li>
-            <li>Fotografia</li>
-            <li>Caminhadas ao ar livre</li>
-        </ul>
-    </section>
+            <!-- Seção de feedback -->
+            <div class="feedback-section">
+                <label for="comments">Comentários:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
 
-    <!-- Links Externos -->
-    <section>
-        <h3>Links Interessantes</h3>
-        <p>Confira meu site favorito: <a href="https://camillecalvotphotographie.com/" target="_blank">Site Exemplo</a></p>
-        <p>Leia um artigo interessante sobre [tema]: <a href="https://www.cnnbrasil.com.br/saude/caminhar-na-natureza-melhora-a-capacidade-de-atencao/#:~:text=Caminhar%20em%20meio%20%C3%A0%20natureza,de%20Utah%2C%20nos%20Estados%20Unidos." target="_blank">Artigo Interessante</a></p>
-    </section>
+                <label>Você gostou do meu perfil?</label>
+                <input type="radio" id="yes" name="like" value="yes"><label for="yes">Sim</label>
+                <input type="radio" id="no" name="like" value="no"><label for="no">Não</label>
+                <input type="radio" id="maybe" name="like" value="maybe"><label for="maybe">Talvez</label>
 
-    <!-- Atividades com Imagens -->
-    <section>
-        <h3>Minhas Atividades</h3>
-        <article>
-            <h4>Leitura</h4>
-            <img src="https://a.storyblok.com/f/245693/568x404/68c4d08855/books.jpg/m/620x0/filters:quality(70)/" alt="Imagem de Leitura" />
-            <p>Adoro ler livros de ficção. Veja mais sobre leitura <a href="https://www.goodreads.com/" target="_blank">aqui</a>.</p>
-        </article>
+                <label>O que você gostou no perfil?</label>
+                <input type="checkbox" id="design" name="liked_feature" value="design"><label for="design">Design</label>
+                <input type="checkbox" id="content" name="liked_feature" value="content"><label for="content">Conteúdo</label>
+                <input type="checkbox" id="usability" name="liked_feature" value="usability"><label for="usability">Facilidade de uso</label>
+                <input type="checkbox" id="other" name="liked_feature" value="other"><label for="other">Outros</label>
+            </div>
 
-        <article>
-            <h4>Ciclismo</h4>
-            <img src="https://nutrata.com.br/wp-content/uploads/2024/03/Tudo-o-que-voce-precisa-saber-sobre-ciclismo.jpg.webp" alt="Imagem de Ciclismo" />
-            <p>Andar de bicicleta é uma das minhas atividades favoritas. Saiba mais sobre ciclismo <a href="https://www.pedal.com.br/" target="_blank">aqui</a>.</p>
-        </article>
-    </section>
+            <!-- Botões -->
+            <div class="buttons">
+                <button type="submit">Enviar</button>
+                <button type="reset">Redefinir</button>
+            </div>
+        </form>
 
-    <!-- Notas de Rodapé -->
-    <footer>
-        <p>Créditos: Imagens retiradas de https://sproutsocial.com/pt/glossary/profile-picture/ , https://nutrata.com.br/blog/tudo-o-que-voce-precisa-saber-sobre-ciclismo/ e https://www.ef.com.br/blog/efacademyblog/os-beneficios-da-leitura-independente/.</p>
-    </footer>
+        <!-- Multimídia -->
+        <div class="media">
+            <h2>Confira meu vídeo</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <h2>Ouça minha música favorita</h2>
+            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/postmalone%2Fsunflower-1" width="100%" height="166" scrolling="no" frameborder="no"></iframe>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Obrigado pelo seu feedback!</p>
+        </footer>
+    </div>
 </body>
 </html>
