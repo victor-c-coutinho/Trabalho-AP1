@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback para a página de perfil de felipe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input, textarea, select {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .feedback-section {
+            margin-top: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+
+        .media {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback para a página de perfil de felipe</h1>
+
+        <!-- Formulário -->
+        <form action="#">
+            <!-- Dados pessoais -->
+            <label for="name">Nome:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="source">Como encontrou meu perfil?</label>
+            <select id="source" name="source">
+                <option value="google">Google</option>
+                <option value="social_media">Mídia social</option>
+                <option value="friend">Amigo</option>
+            </select>
+
+            <!-- Seção de feedback -->
+            <div class="feedback-section">
+                <label for="comments">Comentários:</label>
+                <textarea id="comments" name="comments" rows="4"></textarea>
+
+                <label>Você gostou do meu perfil?</label>
+                <input type="radio" id="yes" name="like" value="yes"><label for="yes">Sim</label>
+                <input type="radio" id="no" name="like" value="no"><label for="no">Não</label>
+                <input type="radio" id="maybe" name="like" value="maybe"><label for="maybe">Talvez</label>
+
+                <label>O que você gostou no perfil?</label>
+                <input type="checkbox" id="design" name="liked_feature" value="design"><label for="design">Design</label>
+                <input type="checkbox" id="content" name="liked_feature" value="content"><label for="content">Conteúdo</label>
+                <input type="checkbox" id="usability" name="liked_feature" value="usability"><label for="usability">Facilidade de uso</label>
+                <input type="checkbox" id="other" name="liked_feature" value="other"><label for="other">Outros</label>
+            </div>
+
+            <!-- Botões -->
+            <div class="buttons">
+                <button type="submit">Enviar</button>
+                <button type="reset">Redefinir</button>
+            </div>
+        </form>
+
+        <!-- Multimídia -->
+        <div class="media">
+            <h2>Confira meu vídeo</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+            <h2>Ouça minha música favorita</h2>
+            <iframe src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/postmalone%2Fsunflower-1" width="100%" height="166" scrolling="no" frameborder="no"></iframe>
+        </div>
+
+        <!-- Rodapé -->
+        <footer>
+            <p>Obrigado pelo seu feedback!</p>
+        </footer>
+    </div>
+</body>
+</html>
