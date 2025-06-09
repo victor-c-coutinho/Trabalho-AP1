@@ -20,9 +20,10 @@
   <main>
     <section id="investimentos">
       <h2>Simulação de Investimentos</h2>
+      <!-- Formulário para entrada de dados da simulação -->
       <form id="investment-form">
         <label for="initial-value">Valor Inicial (R$):</label>
-        <input type="number" id="initial-value" name="initial-value" required>
+        <input type="number" id="initial-value" name="initial-value" required placeholder="Ex: 1000">
 
         <label for="investment-type">Tipo de Investimento:</label>
         <select id="investment-type" name="investment-type" required>
@@ -34,6 +35,7 @@
         <button type="submit">Simular</button>
       </form>
 
+      <!-- Área para exibir os resultados da simulação -->
       <div id="simulation-result" style="display: none;">
         <h3>Resultado da Simulação</h3>
         <p id="investment-summary"></p>
@@ -43,10 +45,14 @@
 
     <section id="dados-economicos">
       <h2>Dados Econômicos</h2>
+      <!-- Dados obtidos via API do Banco Central e AwesomeAPI -->
       <div id="economic-data">
         <p id="selic-rate"></p>
         <p id="ipca-rate"></p>
         <p id="cdi-rate"></p>
+        <p id="usd-rate"></p>
+        <p id="eur-rate"></p>
+        <p id="btc-rate"></p>
       </div>
     </section>
   </main>

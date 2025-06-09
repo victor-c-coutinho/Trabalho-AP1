@@ -60,6 +60,10 @@ form button {
   font-size: 1rem;
 }
 
+form input::placeholder {
+  color: #aaa;
+}
+
 form button {
   background-color: #333;
   color: #fff;

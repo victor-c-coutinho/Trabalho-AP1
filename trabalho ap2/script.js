@@ -1,24 +1,20 @@
 // Função para buscar dados econômicos da API do Banco Central
 async function fetchEconomicData() {
   try {
-    // URLs das APIs
     const selicUrl = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.11/dados?formato=json';
     const ipcaUrl = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.433/dados?formato=json';
     const cdiUrl = 'https://api.bcb.gov.br/dados/serie/bcdata.sgs.12/dados?formato=json';
 
-    // Fetching dos dados
     const [selicData, ipcaData, cdiData] = await Promise.all([
       fetch(selicUrl).then(response => response.json()),
       fetch(ipcaUrl).then(response => response.json()),
       fetch(cdiUrl).then(response => response.json())
     ]);
 
-    // Extraindo os dados mais recentes
     const selicRate = selicData[selicData.length - 1].valor;
     const ipcaRate = ipcaData[ipcaData.length - 1].valor;
     const cdiRate = cdiData[cdiData.length - 1].valor;
 
-    // Exibindo os dados na página
     document.getElementById('selic-rate').textContent = `Taxa Selic: ${selicRate}%`;
     document.getElementById('ipca-rate').textContent = `IPCA: ${ipcaRate}%`;
     document.getElementById('cdi-rate').textContent = `CDI: ${cdiRate}%`;
@@ -27,7 +23,7 @@ async function fetchEconomicData() {
   }
 }
 
-// Função para buscar cotações de moedas da API AwesomeAPI
+// Função para buscar cotações de moedas da AwesomeAPI
 async function fetchCurrencyRates() {
   try {
     const url = 'https://economia.awesomeapi.com.br/json/last/USD-BRL,EUR-BRL,BTC-BRL';
@@ -46,7 +42,7 @@ async function fetchCurrencyRates() {
   }
 }
 
-// Função para simular investimentos
+// Função que realiza a simulação de investimentos ao submeter o formulário
 function simulateInvestment(event) {
   event.preventDefault();
 
@@ -77,24 +73,25 @@ function simulateInvestment(event) {
   const years = 5;
   const finalValue = initialValue * Math.pow(1 + rateOfReturn, years);
 
+  // Exibe o resultado da simulação
   document.getElementById('simulation-result').style.display = 'block';
-  document.getElementById('investment-summary').textContent =
-    `Tipo de Investimento: ${investmentName}\n` +
-    `Valor Inicial: R$ ${initialValue.toFixed(2)}\n` +
-    `Valor Final após ${years} anos: R$ ${finalValue.toFixed(2)}`;
+  document.getElementById('investment-summary').innerHTML =
+    `<strong>Tipo de Investimento:</strong> ${investmentName}<br>` +
+    `<strong>Valor Inicial:</strong> R$ ${initialValue.toFixed(2)}<br>` +
+    `<strong>Valor Final após ${years} anos:</strong> R$ ${finalValue.toFixed(2)}`;
 
   const ctx = document.getElementById('investment-chart').getContext('2d');
 
-  // Destroi gráfico antigo, se já existir (evita erro na recriação do gráfico)
+  // Destrói gráfico antigo se já existir
   if (window.myChart) {
     window.myChart.destroy();
   }
 
-  // Criação de gráfico com Chart.js
+  // Cria novo gráfico usando Chart.js
   window.myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Inicial', 'Final'],
+      labels: ['Valor Inicial', 'Valor Final'],
       datasets: [{
         label: 'Valor (R$)',
         data: [initialValue, finalValue],
@@ -113,3 +110,12 @@ function simulateInvestment(event) {
     }
   });
 }
+
+// Executa as funções de API ao carregar a página
+window.addEventListener('DOMContentLoaded', () => {
+  fetchEconomicData();
+  fetchCurrencyRates();
+
+  // Listener para o formulário
+  document.getElementById('investment-form').addEventListener('submit', simulateInvestment);
+});
